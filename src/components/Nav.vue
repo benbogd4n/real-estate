@@ -1,0 +1,116 @@
+<template>
+  <div class="nav">
+    <RouterLink to="/"><img src="./Frontend_Internship_Test_Slices/img_logo_dtt@3x.png" alt="DTT logo" class="dtt-logo"></RouterLink>
+    <div class="nav-links">
+        <RouterLink to="/" active-class="active" class="houses">Houses</RouterLink>
+        <RouterLink to="/about" active-class="active" class="about">About</RouterLink>
+    </div>
+  </div>
+  <!-- / desktop nav -->
+  <div class="mobile-nav">
+    <div class="nav-links">
+        <RouterLink to="/" active-class="active" class="h-nav-button"><img src="./Frontend_Internship_Test_Slices/ic_mobile_navigarion_home@3x.png" alt="Home page" class="h-nav-button"></RouterLink>
+        <RouterLink to="/about" active-class="active" class="i-nav-button"><img src="./Frontend_Internship_Test_Slices/ic_mobile_navigarion_info@3x.png" alt="About page" class="i-nav-button"></RouterLink>
+    </div>
+  </div>
+  <!-- / mobile nav -->
+</template>
+
+<script>
+export default {
+    name: "Nav"
+}
+</script>
+
+<style scoped>
+  /* ==========================================================================
+     Navigation bar
+     ========================================================================== */
+.nav {
+    background-color: var(--background-light);
+    display: flex;
+    padding: 0 17rem 0 17rem;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    box-shadow: 0 1px 50px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.nav-links{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-left: 3.5rem;
+    font-family: var(--font-primary);
+    font-weight: var(--regular);
+    font-size: var(--large);
+    color: var(--tertiary-dark);
+  }
+
+.dtt-logo {
+  max-width: 7rem;
+  padding: 1rem 0 1rem 0;
+  cursor: pointer;
+}
+
+.active {
+  font-family: var(--font-primary);
+  font-weight: var(--bold);
+  font-size: var(--large);
+  color: var(--text-primary);
+}
+
+.houses {
+    padding: 0;
+    margin: 0;
+}
+
+.about {
+    padding: 0;
+    margin: 0;
+}
+ /* ==========================================================================
+    Mobile Nav
+    ========================================================================== */
+
+@media (max-width: 87em) {
+  .nav {
+    display: none;
+  }
+
+  .mobile-nav {
+  background-color: var(--background-light);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    box-shadow: 0 1px 50px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .nav-links{
+    gap: 13rem;
+    margin-left: 0;
+  }
+
+  .h-nav-button, .i-nav-button {
+    height: 2.5rem;
+  }
+
+  .h-nav-button.active {
+    content: url("./Frontend_Internship_Test_Slices/ic_mobile_navigarion_home_active@3x.png");
+  }
+
+  .i-nav-button.active {
+    content: url("./Frontend_Internship_Test_Slices/ic_mobile_navigarion_info_active@3x.png");
+  }
+
+}
+</style>

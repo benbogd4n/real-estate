@@ -6,43 +6,40 @@ import New from '../views/New.vue'
 import Delete from '../views/Delete.vue'
 import Details from '../views/Details.vue'
 
-
-const routes = [
-    { 
-        path: '/',
-        name: 'Overview',
-        component: Overview
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About
-    },
-    {
-        path: '/edit?id=:houseId',
-        name: 'Edit',
-        component: Edit
-    },
-    {
-        path: '/new',
-        name: 'New',
-        component: New
-    },
-    {
-        path: '/delete?id=:houseId',
-        name: 'Delete',
-        component: Delete
-    },
-    {
-        path: '/details?id=:houseId',
-        name: 'Details',
-        component: Details
-    }
-]
-
 const router = createRouter ({
-    history: createWebHistory(process.env.BASE_URL),
-    routes
+    history: createWebHistory(),
+    routes: [
+        { 
+            path: '/',
+            name: 'Overview',
+            component: Overview
+        },
+        {
+            path: '/about',
+            name: 'About',
+            component: About
+        },
+        {
+            path: '/edit',
+            name: 'Edit',
+            component: Edit
+        },
+        {
+            path: '/new',
+            name: 'New',
+            component: New
+        },
+        {
+            path: '/delete',
+            name: 'Delete',
+            component: Delete
+        },
+        {
+            path: '/details',
+            name: 'Details',
+            component: Details
+        }
+    ]
 })
 
 export default router
