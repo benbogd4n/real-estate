@@ -7,7 +7,7 @@
             </div>
             <!-- / return to Overview button -->
             <div class="title-listing">
-                <RouterLink :to="{name: 'Overview'}"><img src="./Frontend_Internship_Test_Slices/ic_back_grey@3x.png" alt="Back button" class="icon mobile-back-icon" ></RouterLink>
+                <router-link to="/"><img src="./Frontend_Internship_Test_Slices/ic_back_grey@3x.png" alt="Back button" class="icon mobile-back-icon" ></router-link>
                 <h1>Create new listing</h1>
             </div>
             <!-- / title + return to Overview mobile button -->

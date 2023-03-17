@@ -2,14 +2,16 @@
     <div class="backdrop">
         <div class="modal">
             <h2>Delete listing</h2>
-            <p>Are you sure you want to delete "{{this.$store.state.deletedHouse}}"? This action cannot be undone.</p>
+            <!-- <p>Are you sure you want to delete "{{this.$store.state.deletedHouse}}"? This action cannot be undone.</p> -->
+            <p>Are you sure you want to delete this house? This action cannot be undone.</p>
             <div class="buttons">
-                <RouterLink :to="{name: 'Overview'}">
-                    <button class="button accept" @click="deleteHouses" >YES, DELETE</button>
-                </RouterLink>
-                <RouterLink :to="{name: 'Overview'}">
+                <router-link to="/">
+                    <!-- <button class="button accept" @click="deleteHouses" >YES, DELETE</button> -->
+                    <button class="button accept">YES, DELETE</button>
+                </router-link>
+                <router-link to="/">
                     <button class="button deny">GO BACK</button>
-                </RouterLink>
+                </router-link>
                 <!-- / return to Overview -->
             </div>
         </div>
@@ -53,7 +55,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 /* ==========================================================================
    Desktop Delete
@@ -64,7 +66,7 @@ export default {
     height: 18rem;
     padding: 3rem 7rem 1rem 7rem;
     margin: 10rem auto;
-    background: var(--background-light);
+    background: $background-light;
     border-radius: 8px;
 }
 
@@ -83,7 +85,7 @@ h2 {
 p {
     text-align: center;
     line-height: 1.4;
-    color: var(--text-secondary);
+    color: $text-secondary;
     margin-top: 1rem;
 }
 
@@ -104,7 +106,7 @@ button {
 }
 
 .accept {
-    background-color: var(--element-primary);
+    background-color: $element-primary;
     color: #fff;
 }
 

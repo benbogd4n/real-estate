@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <RouterLink to="/"><img src="./Frontend_Internship_Test_Slices/img_logo_dtt@3x.png" alt="DTT logo" class="dtt-logo"></RouterLink>
+    <RouterLink to="/"><img src="../images/logo.png" alt="HRE logo" class="HRE-logo"></RouterLink>
     <div class="nav-links">
         <RouterLink to="/" active-class="active" class="houses">Houses</RouterLink>
         <RouterLink to="/about" active-class="active" class="about">About</RouterLink>
@@ -22,12 +22,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   /* ==========================================================================
      Navigation bar
      ========================================================================== */
 .nav {
-    background-color: var(--background-light);
+    background-color: $background-light;
     display: flex;
     padding: 0 17rem 0 17rem;
     position: fixed;
@@ -46,23 +46,23 @@ export default {
     gap: 4rem;
     align-items: center;
     margin-left: 3.5rem;
-    font-family: var(--font-primary);
-    font-weight: var(--regular);
-    font-size: var(--large);
-    color: var(--tertiary-dark);
+    font-family: $font-primary;
+    font-weight: $regular;
+    font-size: $large;
+    color: $tertiary-dark;
   }
 
-.dtt-logo {
+.HRE-logo {
   max-width: 7rem;
   padding: 1rem 0 1rem 0;
   cursor: pointer;
 }
 
 .active {
-  font-family: var(--font-primary);
-  font-weight: var(--bold);
-  font-size: var(--large);
-  color: var(--text-primary);
+  font-family: $font-primary;
+  font-weight: $bold;
+  font-size: $large;
+  color: $text-primary;
 }
 
 .houses {
@@ -84,7 +84,7 @@ export default {
   }
 
   .mobile-nav {
-  background-color: var(--background-light);
+  background-color: $background-light;
     display: flex;
     justify-content: center;
     padding: 1rem 0;

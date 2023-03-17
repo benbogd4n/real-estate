@@ -2,14 +2,14 @@
     <div class="title-desktop">
         <h1>Houses</h1>
         <RouterLink to="/new"><div class="create">
-            <button class="create-icon"><img src="./Frontend_Internship_Test_Slices/ic_plus_white@3x.png" alt="Add button" class="icon"></button>
+            <button class="create-icon"><img src="../images/icons/plus.png" alt="Add button" class="icon"></button>
             <button class="create-text">CREATE NEW</button>
         </div></RouterLink>
     </div>
     <div class="title-mobile">
         <h1>Houses</h1>
         <RouterLink to="/new" class="mobile-create-new">
-            <button class="m-create-button"><img src="./Frontend_Internship_Test_Slices/ic_plus_grey@3x.png" alt="Add button" class="icon"></button>
+            <button class="m-create-button"><img src="../images/icons/plus.png" alt="Add button" class="icon"></button>
         </RouterLink>
     </div>
 </template>
@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import './scss/variables.scss';
 /* ==========================================================================
    Title
    ========================================================================== */
@@ -36,7 +38,7 @@ export default {
 }
 
 .create {
-    background-color: var(--element-primary);
+    background-color: $element-primary;
     border-radius: 8px;
     padding: 0 1rem;
 }
@@ -46,12 +48,12 @@ export default {
 }
 
 .create-text{
-    color: #fff;
-    background-color: var(--element-primary);
+    // color: #fff;
+    background-color: $element-primary;
 }
 
 .create-icon {
-    background-color: var(--element-primary);
+    background-color: $element-primary;
 }
 
 /* ==========================================================================

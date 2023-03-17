@@ -1,5 +1,5 @@
 <template>
-    <div class="result-counter">
+    <!-- <div class="result-counter">
         <h2 v-if="listingCounter > 0 && this.$store.state.searchQuery.length != 0 ">{{ listingCounter }} results found</h2>
         <div v-if="listingCounter == 0" class="no-results">
             <img src="./Frontend_Internship_Test_Slices/img_empty_houses@3x.png" alt="No results found" class="error-house">
@@ -8,47 +8,51 @@
                 <p>Please try another keyword.</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="results">
-        <RouterLink :to="{ name: 'Details', params: {houseId: listing.id}}" class="result" v-for="listing in filteredListings" :key="listing.id">
+        <!-- <RouterLink to="/details" class="result" v-for="listing in filteredListings" :key="listing.id"> -->
+        <router-link to="/details" class="result">
             <div class="house-container">
-                <img :src="listing.image" alt="House image" class="house-img">
+                <img src="" alt="House image" class="house-img">
             </div>
             <div class="listing">
                 <div class="street">
-                    <h2>{{listing.location.street}}</h2>
+                    <h2>Street</h2>
+                    <!-- <h2>{{listing.location.street}}</h2> -->
                 </div>
                 <div class="price">
-                    <span>€ {{listing.price}}</span>
+                    <!-- <span>€ {{listing.price}}</span> -->
                 </div>
                 <div class="address">
                     <div class="postcode">
-                        <span>{{listing.location.zip}}</span>
+                        <!-- <span>{{listing.location.zip}}</span> -->
                     </div>
                     <div class="city">
-                        <span>{{listing.location.city}}</span>
+                        <!-- <span>{{listing.location.city}}</span> -->
                     </div>
                 </div>
                 <div class="amenities">
                     <div class="amenity">
-                        <img src="./Frontend_Internship_Test_Slices/ic_bed@3x.png" alt="Bedroom icon" class="icon">
-                        <span>{{listing.rooms.bedrooms}}</span>
+                        <img src="../images/icons/bed.png" alt="Bedroom icon" class="icon">
+                        <!-- <span>{{listing.rooms.bedrooms}}</span> -->
                     </div>
                     <div class="amenity">
-                        <img src="./Frontend_Internship_Test_Slices/ic_bath@3x.png" alt="Bathroom icon" class="icon">
-                        <span>{{listing.rooms.bathrooms}}</span>
+                        <img src="../images/icons/bath.png" alt="Bathroom icon" class="icon">
+                        <!-- <span>{{listing.rooms.bathrooms}}</span> -->
                     </div>
                     <div class="amenity">
-                        <img src="./Frontend_Internship_Test_Slices/ic_size@3x.png" alt="Area icon" class="icon">
-                        <span>{{listing.size}} m2</span>
+                        <img src="../images/icons/size.png" alt="Area icon" class="icon">
+                        <!-- <span>{{listing.size}} m2</span> -->
                     </div>
                 </div>
             </div>
             <div class="edit-icons">
-                <RouterLink :to="{ name: 'Edit', params: {houseId: listing.id}}" ><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit@3x.png" alt="Edit icon" class="icon"></button></RouterLink>
-                <RouterLink :to="{ name: 'Delete', params: {houseId: listing.id}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete@3x.png" alt="Delete icon" class="icon"></button></RouterLink>
+                <!-- <RouterLink :to="{ name: 'Edit', params: {houseId: listing.id}}" ><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit@3x.png" alt="Edit icon" class="icon"></button></RouterLink> -->
+                <RouterLink to="/edit"><button class="edit"><img src="../images/icons/edit.png" alt="Edit icon" class="icon"></button></RouterLink>
+                <!-- <RouterLink :to="{ name: 'Delete', params: {houseId: listing.id}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete@3x.png" alt="Delete icon" class="icon"></button></RouterLink> -->
+                <RouterLink to="/delete"><button class="delete" @click="toggleModal"><img src="../images/icons/delete.png" alt="Delete icon" class="icon"></button></RouterLink>
             </div>
-        </RouterLink>
+        </router-link>
     </div>
 </template>
 
@@ -85,12 +89,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import '../scss/variables.scss';
+
 /* ==========================================================================
    Results
    ========================================================================== */
 
 h2 {
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 .no-results {
@@ -114,13 +121,13 @@ h2 {
 }
 
 .price {
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 .result {
     display: flex;
     align-items: center;
-    background-color: var(--background-light);
+    background-color: $background-light;
     border-radius: 8px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     margin: 1.5rem 0;
@@ -148,7 +155,7 @@ h2 {
 .amenities {
     display: flex;
     gap: 0.5rem;
-    color: var(--text-primary);
+    color: $text-primary;
 }
 
 .amenity {
@@ -162,7 +169,7 @@ h2 {
 
 .address {
     display: flex;
-    color: var(--tertiary-dark);
+    color: $tertiary-dark;
 }
 
 .edit-icons {
@@ -172,7 +179,7 @@ h2 {
 }
 
 .edit, .delete {
-    background-color: var(--background-light);
+    background-color: $background-light;
     padding: 0.5rem;
 }
 

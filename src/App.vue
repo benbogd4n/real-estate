@@ -15,6 +15,6 @@ export default {
 <router-view />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

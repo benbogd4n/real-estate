@@ -2,78 +2,96 @@
     <div class="details">
         <div class="m-details-nav">
             <div class="m-house-container">
-                <img :src="this.$store.state.currentHouse.image" alt="House image" class="house-img">
+                <img src="" alt="House image" class="house-img">
             </div>
             <!-- / image of house mobile -->
             <div class="title-listing">
                 <div class="back-arrow">
-                    <RouterLink :to="{ name: 'Overview'}"><img src="./Frontend_Internship_Test_Slices/ic_back_white@3x.png" alt="Back button" class="icon mobile-back-icon"></RouterLink>
+                    <router-link to="/"><img src="../images/icons/back.png" alt="Back button" class="icon mobile-back-icon"></router-link>
                 </div>
                 <!-- / back to Overview button mobile -->
                 <div class="m-edit-icons">
-                    <RouterLink :to="{ name: 'Edit', params: {houseId: this.houseId}}"><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit_white@3x.png" alt="Edit icon" class="icon"></button></RouterLink>
-                    <RouterLink :to="{ name: 'Delete', params: {houseId: this.houseId}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete_white@3x.png" alt="Delete icon" class="icon"></button></RouterLink>
+                    <!-- <RouterLink :to="{ name: 'Edit', params: {houseId: this.houseId}}"><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit_white@3x.png" alt="Edit icon" class="icon"></button></RouterLink> -->
+                    <router-link to="/edit"><button class="edit"><img src="../images/icons/edit.png" alt="Edit icon" class="icon"></button></router-link>
+                    <!-- <RouterLink :to="{ name: 'Delete', params: {houseId: this.houseId}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete_white@3x.png" alt="Delete icon" class="icon"></button></RouterLink> -->
+                    <router-link to="/delete" ><button class="delete" @click="toggleModal"><img src="../images/icons/delete.png" alt="Delete icon" class="icon"></button></router-link>
                 </div>
                 <!-- / edit and delete icons mobile-->
             </div>
         </div>
         <!-- / mobile nav -->
+
         <div class="details-main">
+            <router-link to="/">
+                <img src="../images/icons/back.png" alt="Back button" class="icon" >
+                <p class="back-button">Back to overview</p>
+            </router-link>
             <div class="house-container">
-                <img :src="this.$store.state.currentHouse.image" alt="House image" class="house-img">
+                <img src="" alt="House image" class="house-img">
             </div>
             <div class="house-description">
                 <div class="listing">
                     <div class="street">
-                        <h2>{{this.$store.state.currentHouse.location.street}}</h2>
+                        <h2>Street</h2>
+                        <!-- <h2>{{this.$store.state.currentHouse.location.street}}</h2> -->
                     </div>
                     <div class="address">
                         <div class="zip">
-                            <img src="./Frontend_Internship_Test_Slices/ic_location@3x.png" alt="" class="icon">
-                            <span>{{this.$store.state.currentHouse.location.zip}}</span>
+                            <img src="../images/icons/location.png" alt="" class="icon">
+                            <!-- <span>{{this.$store.state.currentHouse.location.zip}}</span> -->
+                            <span>zip</span>
                         </div>
                         <div class="city">
-                            <span>{{this.$store.state.currentHouse.location.city}}</span>
+                            <!-- <span>{{this.$store.state.currentHouse.location.city}}</span> -->
                         </div>                        
                     </div>
                     <div class="basic-info">
                         <div class="price">
-                            <img src="./Frontend_Internship_Test_Slices/ic_price@3x.png" alt="" class="icon">
-                            <span>{{this.$store.state.currentHouse.price}}</span>
+                            <img src="../images/icons/euro.png" alt="" class="icon">
+                            <!-- <span>{{this.$store.state.currentHouse.price}}</span> -->
+                            <span>price</span>
                         </div>
                         <div class="size">
-                            <img src="./Frontend_Internship_Test_Slices/ic_size@3x.png" alt="" class="icon">
-                            <span>{{this.$store.state.currentHouse.size}} m2</span>
+                            <img src="../images/icons/size.png" alt="" class="icon">
+                            <!-- <span>{{this.$store.state.currentHouse.size}} m2</span> -->
+                            <span>size</span>
                         </div>
                         <div class="constructionYear">
-                            <img src="./Frontend_Internship_Test_Slices/ic_construction_date@3x.png" alt="" class="icon">
-                            <span>Built in {{this.$store.state.currentHouse.constructionYear}}</span>
+                            <img src="../images/icons/build.png" alt="" class="icon">
+                            <!-- <span>Built in {{this.$store.state.currentHouse.constructionYear}}</span> -->
+                            <span>year</span>
                         </div>
                     </div>
                     <div class="amenities">
                         <div class="bedrooms">
-                            <img src="./Frontend_Internship_Test_Slices/ic_bed@3x.png" alt="" class="icon">
-                            <span>{{this.$store.state.currentHouse.rooms.bedrooms}}</span>
+                            <img src="../images/icons/bed.png" alt="" class="icon">
+                            <!-- <span>{{this.$store.state.currentHouse.rooms.bedrooms}}</span> -->
+                            <span>bedroom</span>
                         </div>
                         <div class="bathrooms">
-                            <img src="./Frontend_Internship_Test_Slices/ic_bath@3x.png" alt="" class="icon">
-                            <span>{{this.$store.state.currentHouse.rooms.bathrooms}}</span>
+                            <img src="../images/icons/bath.png" alt="" class="icon">
+                            <!-- <span>{{this.$store.state.currentHouse.rooms.bathrooms}}</span> -->
+                            <span>bathroom</span>
                         </div>
                         <div class="garage">
-                            <img src="./Frontend_Internship_Test_Slices/ic_garage@3x.png" alt="" class="icon">
-                            <span>{{ hasGarage }}</span>
+                            <img src="../images/icons/garage.png" alt="" class="icon">
+                            <!-- <span>{{ hasGarage }}</span> -->
+                            <span>garage</span>
                         </div>                    
                     </div>
                 </div>
                 <!-- / house details -->
                 <div class="edit-icons">
-                    <RouterLink :to="{ name: 'Edit', params: {houseId: this.houseId}}"><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit@3x.png" alt="Edit icon" class="icon"></button></RouterLink>
-                    <RouterLink :to="{ name: 'Delete', params: {houseId: this.houseId}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete@3x.png" alt="Delete icon" class="icon"></button></RouterLink>
+                    <!-- <RouterLink :to="{ name: 'Edit', params: {houseId: this.houseId}}"><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit@3x.png" alt="Edit icon" class="icon"></button></RouterLink> -->
+                    <RouterLink to="/edit"><button class="edit"><img src="../images/icons/edit.png" alt="Edit icon" class="icon"></button></RouterLink>
+                    <!-- <RouterLink :to="{ name: 'Delete', params: {houseId: this.houseId}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete@3x.png" alt="Delete icon" class="icon"></button></RouterLink> -->
+                    <RouterLink to="/delete" ><button class="delete" @click="toggleModal"><img src="../images/icons/delete.png" alt="Delete icon" class="icon"></button></RouterLink>
                 </div>
                 <!-- / edit and delete buttons -->
             </div>
             <div class="description">
-                <p>{{this.$store.state.currentHouse.description}}</p>
+                <!-- <p>{{this.$store.state.currentHouse.description}}</p> -->
+                <p>description description description description description description description </p>
             </div>
             <!-- / house description -->
         </div>
@@ -110,12 +128,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* ==========================================================================
     Desktop Details
     ========================================================================== */
 span {
-    color: var(--text-secondary);
+    color: $text-secondary;
     margin: 0.5rem;
 }
 
@@ -145,7 +163,7 @@ p {
 .details-main {
     width: 33.5rem;
     padding-bottom: 2rem;
-    background-color: var(--background-light);
+    background-color: $background-light;
 }
 
 .m-house-container {

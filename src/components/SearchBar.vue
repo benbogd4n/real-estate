@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <div class="search-bar">
-            <button class="search-button"><img src="./Frontend_Internship_Test_Slices/ic_search@3x.png" alt="Search button" class="icon"></button>
+            <button class="search-button"><img src="../images/icons/search.png" alt="Search button" class="icon"></button>
             <input class="input" type="search" v-model="search" placeholder="Search for a house" @input="updateQuery">
         </div>
         <div class="filter-buttons">
@@ -63,14 +63,14 @@ export default {
 
 .input {
     border: none;
-    background-color: var(--tertiary-light);
+    background-color: var($tertiary-light);
     width: 22rem;
     height: 2.5rem;
 }
 
 .search-button {
     width: 3rem;
-    background-color: var(--tertiary-light);
+    background-color: var($tertiary-light);
     cursor: default;
 }
 
@@ -90,11 +90,11 @@ export default {
 }
 
 .active {
-    background-color: var(--element-primary);
+    background-color: var($element-primary);
 }
     
 .inactive {
-    background-color: var(--tertiary-dark);
+    background-color: var($tertiary-dark);
 }
 
 /* ==========================================================================
