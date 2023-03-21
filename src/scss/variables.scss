@@ -2,45 +2,44 @@
    Fonts
    ========================================================================== */
 
-   @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900');
-   @import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900');
    
-   /* ==========================================================================
-       SASS Variables
-       ========================================================================== */
-          /* Element colors
-       ========================================================================== */
-   $element-primary: #EB5440;
-   $element-secondary: #4A4B4C;
-   $tertiary-light: #E8E8E8;
-   $tertiary-dark: #C3C3C3;
-   $background-dark: #F6F6F6;
-   $background-light: #FFF;
-   /* Text colors
-       ========================================================================== */
-   $text-primary: #000;
-   $text-secondary: #4A4B4C;
-   $hyperlink: #067BC2;
-   /* Desktop font sizes
-       ========================================================================== */
-   $header-one: 32px;
-   $header-two: 22px;
-   $large: 18px;
-   $medium: 16px;
-   $small: 14px;
-   /* Mobile font sizes
-       ========================================================================== */
-   $mobile-large: 18px;
-   $mobile-medium: 14px;
-   $mobile-small: 12px;
-   /* Font family
-       ========================================================================== */
-   $font-primary: 'Montserrat', sans-serif;
-   $font-secondary: 'Open Sans', sans-serif;
-   /* Font weight
-       ========================================================================== */
-   $bold: 700;
-   $semibold: 500;
-   $regular: 400;
-   
-   
+/* ==========================================================================
+    SASS Variables
+    ========================================================================== */
+        /* Element colors
+    ========================================================================== */
+$element-primary: #EB5440;
+$element-secondary: #4A4B4C;
+$tertiary-light: #E8E8E8;
+$tertiary-dark: #C3C3C3;
+$background-dark: #F6F6F6;
+$background-light: #FFF;
+/* Text colors
+    ========================================================================== */
+$text-primary: #000;
+$text-secondary: #4A4B4C;
+$hyperlink: #067BC2;
+/* Desktop font sizes
+    ========================================================================== */
+$header-one: 32px;
+$header-two: 22px;
+$large: 18px;
+$medium: 16px;
+$small: 14px;
+/* Mobile font sizes
+    ========================================================================== */
+$mobile-large: 18px;
+$mobile-medium: 14px;
+$mobile-small: 12px;
+/* Font family
+    ========================================================================== */
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+/* Font weight
+    ========================================================================== */
+$bold: 700;
+$semibold: 500;
+$regular: 400;
+

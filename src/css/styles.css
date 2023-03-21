@@ -1,3 +1,145 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900");
+/* ==========================================================================
+    SASS Variables
+    ========================================================================== */
+/* Element colors
+========================================================================== */
+/* Text colors
+    ========================================================================== */
+/* Desktop font sizes
+    ========================================================================== */
+/* Mobile font sizes
+    ========================================================================== */
+/* Font family
+    ========================================================================== */
+/* Font weight
+    ========================================================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F6F6F6;
+  color: #000;
+  line-height: 1.8;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: #C3C3C3;
+  font-family: "Montserrat", sans-serif;
+  font-weight: v 400;
+  font-size: 18px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  height: 3rem;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.invalid-button {
+  background-color: #EB5440;
+  opacity: 0.6;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.back-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.input-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input, textarea {
+  border: none;
+  min-height: 3rem;
+  border-radius: 8px;
+  width: 21rem;
+  padding-left: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.required-border {
+  border: 1px solid #EB5440;
+}
+
+.remove-error {
+  display: none;
+}
+
+.empty {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.error-msg {
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #EB5440;
+  display: none;
+}
+
+.listing {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
 .icon {
   max-width: 1rem;
+  max-height: 1rem;
+}
+
+/* ==========================================================================
+    Mobile Styles
+    ========================================================================== */
+@media (max-width: 87em) {
+  html, body, button, input, textarea, select, .input-title, .error-msg, .listing {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  h2, .empty {
+    font-size: 14px;
+  }
+  .icon {
+    max-width: 1.4rem;
+    max-height: 1.4rem;
+  }
 }

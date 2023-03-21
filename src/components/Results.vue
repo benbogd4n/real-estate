@@ -96,10 +96,8 @@ export default {
    Results
    ========================================================================== */
 
-$textPrimary: red;
-
 h2 {
-    color: $textPrimary;
+    color: $text-primary;
 }
 
 .no-results {
