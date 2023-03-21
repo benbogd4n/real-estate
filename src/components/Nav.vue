@@ -9,8 +9,8 @@
   <!-- / desktop nav -->
   <div class="mobile-nav">
     <div class="nav-links">
-        <RouterLink to="/" active-class="active" class="h-nav-button"><img src="./Frontend_Internship_Test_Slices/ic_mobile_navigarion_home@3x.png" alt="Home page" class="h-nav-button"></RouterLink>
-        <RouterLink to="/about" active-class="active" class="i-nav-button"><img src="./Frontend_Internship_Test_Slices/ic_mobile_navigarion_info@3x.png" alt="About page" class="i-nav-button"></RouterLink>
+        <RouterLink to="/" active-class="active" class="h-nav-button"><img src="../images/icons/home.png" alt="Home page" class="h-nav-button"></RouterLink>
+        <RouterLink to="/about" active-class="active" class="i-nav-button"><img src="../images/icons/info.png" alt="About page" class="i-nav-button"></RouterLink>
     </div>
   </div>
   <!-- / mobile nav -->
@@ -101,16 +101,21 @@ export default {
     margin-left: 0;
   }
 
-  .h-nav-button, .i-nav-button {
+  .h-nav-button {
+    height: 2rem;
+  }
+  
+  .i-nav-button {
     height: 2.5rem;
   }
 
   .h-nav-button.active {
-    content: url("./Frontend_Internship_Test_Slices/ic_mobile_navigarion_home_active@3x.png");
+    height: 2.2rem;
+    content: url("../images/icons/home-selected.png");
   }
 
   .i-nav-button.active {
-    content: url("./Frontend_Internship_Test_Slices/ic_mobile_navigarion_info_active@3x.png");
+    content: url("../images/icons/info-selected.png");
   }
 
 }

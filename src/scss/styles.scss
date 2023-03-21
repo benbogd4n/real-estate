@@ -1,4 +1,5 @@
 @import '../scss/variables.scss';
+@import '../scss/editAndNew.scss';
 
 html, body {
     margin: 0;
@@ -21,6 +22,7 @@ a {
 
 button {
     cursor: pointer;
+    color: #fff;
     border: none;
     height: 3rem;
     border-radius: 8px;

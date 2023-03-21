@@ -18,6 +18,213 @@
     ========================================================================== */
 /* Font weight
     ========================================================================== */
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900");
+/* ==========================================================================
+    SASS Variables
+    ========================================================================== */
+/* Element colors
+========================================================================== */
+/* Text colors
+    ========================================================================== */
+/* Desktop font sizes
+    ========================================================================== */
+/* Mobile font sizes
+    ========================================================================== */
+/* Font family
+    ========================================================================== */
+/* Font weight
+    ========================================================================== */
+.main-container {
+  margin: 0;
+  padding: 0;
+  background: url("./components/Frontend_Internship_Test_Slices/img_background@3x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.new-view, .edit-view {
+  padding: 0;
+  margin: 3rem 17rem 0 17rem;
+}
+
+.title-listing img {
+  display: none;
+}
+
+.back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  width: 25%;
+  padding-top: 3rem;
+}
+
+.input-address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-address input {
+  width: 9.75rem;
+}
+
+.edit-field div {
+  max-width: 22rem;
+}
+
+.upload-image {
+  background: url("../images/icons/plus.png");
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px dashed #4A4B4C;
+  border-radius: 0;
+  height: 7rem;
+  width: 7rem;
+}
+
+.edit-image {
+  background: url("./components/Frontend_Internship_Test_Slices/img_placeholder_house@3x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 7rem;
+  width: 7rem;
+}
+
+select {
+  border: none;
+  height: 3rem;
+  border-radius: 8px;
+  width: 10.6rem;
+  background-color: #FFF;
+}
+
+.submit, .submit-invalid {
+  margin: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  max-width: 25rem;
+}
+
+.submit-button {
+  width: 12rem;
+  margin: 0;
+  margin-bottom: 4rem;
+  background-color: #EB5440;
+  color: #FFF;
+}
+
+.input-amenity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+textarea {
+  width: 20rem;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.input-amenity input {
+  width: 9.5rem;
+}
+
+/* ==========================================================================
+    Mobile New & Edit
+    ========================================================================== */
+@media (max-width: 87em) {
+  .new-view, .edit-view {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .back {
+    display: none;
+  }
+  .title-listing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 1.5rem 0;
+  }
+  .title-listing img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .title-listing h1 {
+    margin: 0 auto;
+    padding-right: 3.5rem;
+  }
+  .mobile-back-icon {
+    margin-left: 1.5rem;
+  }
+  .edit-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .edit-field div {
+    max-width: 30rem;
+  }
+  .upload {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: 1rem;
+  }
+  .edit-field input {
+    width: 28.1rem;
+  }
+  .input-amenity input {
+    width: 12.84rem;
+  }
+  textarea {
+    width: 27rem;
+  }
+  .input-address input {
+    width: 13.08rem;
+  }
+  select {
+    width: 14rem;
+    height: 3.2rem;
+    padding-left: 1rem;
+  }
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -39,6 +246,7 @@ a {
 
 button {
   cursor: pointer;
+  color: #fff;
   border: none;
   height: 3rem;
   border-radius: 8px;

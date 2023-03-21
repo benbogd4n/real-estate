@@ -1,16 +1,15 @@
 <template>
     <div class="title-desktop">
         <h1>Houses</h1>
-        <RouterLink to="/new"><div class="create">
-            <button class="create-icon"><img src="../images/icons/plus.png" alt="Add button" class="icon"></button>
+        <router-link to="/new" class="create">
             <button class="create-text">CREATE NEW</button>
-        </div></RouterLink>
+        </router-link>
     </div>
     <div class="title-mobile">
         <h1>Houses</h1>
-        <RouterLink to="/new" class="mobile-create-new">
+        <router-link to="/new" class="mobile-create-new">
             <button class="m-create-button"><img src="../images/icons/plus.png" alt="Add button" class="icon"></button>
-        </RouterLink>
+        </router-link>
     </div>
 </template>
 

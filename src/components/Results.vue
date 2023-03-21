@@ -9,40 +9,39 @@
             </div>
         </div>
     </div> -->
-    <div class="results">
+    <div class="results" v-for="house in houses" :key="house.id">
         <!-- <RouterLink to="/details" class="result" v-for="listing in filteredListings" :key="listing.id"> -->
         <router-link to="/details" class="result">
             <div class="house-container">
-                <img src="" alt="House image" class="house-img">
+                <img :src="`/src/images/houses/${house.image}`" alt="House image" class="house-img">
             </div>
             <div class="listing">
                 <div class="street">
-                    <h2>Street</h2>
-                    <!-- <h2>{{listing.location.street}}</h2> -->
+                    <h2>{{house.address.street}}</h2>
                 </div>
                 <div class="price">
-                    <!-- <span>€ {{listing.price}}</span> -->
+                    <span>€ {{house.price}}</span>
                 </div>
                 <div class="address">
                     <div class="postcode">
-                        <!-- <span>{{listing.location.zip}}</span> -->
+                        <span>{{house.address.zip}}</span>
                     </div>
                     <div class="city">
-                        <!-- <span>{{listing.location.city}}</span> -->
+                        <span>{{house.address.city}}</span>
                     </div>
                 </div>
                 <div class="amenities">
                     <div class="amenity">
                         <img src="../images/icons/bed.png" alt="Bedroom icon" class="icon">
-                        <!-- <span>{{listing.rooms.bedrooms}}</span> -->
+                        <span>{{house.bedroom}}</span>
                     </div>
                     <div class="amenity">
                         <img src="../images/icons/bath.png" alt="Bathroom icon" class="icon">
-                        <!-- <span>{{listing.rooms.bathrooms}}</span> -->
+                        <span>{{house.bathroom}}</span>
                     </div>
                     <div class="amenity">
                         <img src="../images/icons/size.png" alt="Area icon" class="icon">
-                        <!-- <span>{{listing.size}} m2</span> -->
+                        <span>{{house.size}} m2</span>
                     </div>
                 </div>
             </div>
@@ -58,9 +57,15 @@
 
 <script>
 import SearchBar from './SearchBar.vue'
+import { houses } from "../json/houses.json"
 
 export default {
     name: "Results",
+    data() {
+        return {
+            houses: houses
+        }
+    },
     components: {
         SearchBar
     },
