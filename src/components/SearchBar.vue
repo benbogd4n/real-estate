@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/variables.scss';
 /* ==========================================================================
    Desktop
    ========================================================================== */
@@ -63,14 +64,14 @@ export default {
 
 .input {
     border: none;
-    background-color: var($tertiary-light);
+    background-color: $tertiary-light;
     width: 22rem;
     height: 2.5rem;
 }
 
 .search-button {
     width: 3rem;
-    background-color: var($tertiary-light);
+    background-color: $tertiary-light;
     cursor: default;
 }
 
@@ -90,11 +91,11 @@ export default {
 }
 
 .active {
-    background-color: var($element-primary);
+    background-color: $element-primary;
 }
     
 .inactive {
-    background-color: var($tertiary-dark);
+    background-color: $tertiary-dark;
 }
 
 /* ==========================================================================
