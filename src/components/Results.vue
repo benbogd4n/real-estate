@@ -11,7 +11,7 @@
     </div> -->
     <div class="results" v-for="house in houses" :key="house.id">
         <!-- <RouterLink to="/details" class="result" v-for="listing in filteredListings" :key="listing.id"> -->
-        <router-link to="/details" class="result">
+        <router-link :to="`/details/${house.id}`" class="result">
             <div class="house-container">
                 <img :src="`/src/images/houses/${house.image}`" alt="House image" class="house-img">
             </div>
@@ -57,13 +57,12 @@
 
 <script>
 import SearchBar from './SearchBar.vue'
-import { houses } from "../json/houses.json"
 
 export default {
     name: "Results",
     data() {
         return {
-            houses: houses
+            houses: this.$store.state.houses
         }
     },
     components: {
@@ -199,11 +198,17 @@ h2 {
     border-radius: 8px;
 }
 
-.edit-icons .icon:hover {
-    max-width: 1.1rem;
-    max-height: 1.1rem;
+button .edit:hover {
+    content: url("../images/icons/edit-hover.png");
 }
 
+button .delete:hover {
+    content: url("../images/icons/delete-hover.png");
+}
+
+.edit-icons:hover {
+    height: 1.3rem;
+}
 /* ==========================================================================
     Mobile Overview
     ========================================================================== */

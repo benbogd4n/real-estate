@@ -26,23 +26,24 @@
                 <img src="../images/icons/back.png" alt="Back button" class="icon" >
                 <p class="back-button">Back to overview</p>
             </router-link>
+            <button @click="getCurrent">Get house</button>
             <div class="house-container">
-                <img src="" alt="House image" class="house-img">
+                <img :src="`/src/images/houses/${this.$store.state.currentHouse.image}`" alt="House image" class="house-img">
             </div>
             <div class="house-description">
                 <div class="listing">
                     <div class="street">
                         <h2>Street</h2>
-                        <!-- <h2>{{this.$store.state.currentHouse.location.street}}</h2> -->
+                        <!-- <h2>{{this.$store.state.currentHouse.address.street}}</h2> -->
                     </div>
                     <div class="address">
                         <div class="zip">
                             <img src="../images/icons/location.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.location.zip}}</span> -->
+                            <!-- <span>{{this.$store.state.currentHouse.address.zip}}</span> -->
                             <span>zip</span>
                         </div>
                         <div class="city">
-                            <!-- <span>{{this.$store.state.currentHouse.location.city}}</span> -->
+                            <!-- <span>{{this.$store.state.currentHouse.address.city}}</span> -->
                         </div>                        
                     </div>
                     <div class="basic-info">
@@ -58,25 +59,24 @@
                         </div>
                         <div class="constructionYear">
                             <img src="../images/icons/build.png" alt="" class="icon">
-                            <!-- <span>Built in {{this.$store.state.currentHouse.constructionYear}}</span> -->
+                            <!-- <span>Built in {{this.$store.state.currentHouse.yearBuilt}}</span> -->
                             <span>year</span>
                         </div>
                     </div>
                     <div class="amenities">
                         <div class="bedrooms">
                             <img src="../images/icons/bed.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.rooms.bedrooms}}</span> -->
+                            <!-- <span>{{this.$store.state.currentHouse.bedroom}}</span> -->
                             <span>bedroom</span>
                         </div>
                         <div class="bathrooms">
                             <img src="../images/icons/bath.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.rooms.bathrooms}}</span> -->
+                            <!-- <span>{{this.$store.state.currentHouse.bathroom}}</span> -->
                             <span>bathroom</span>
                         </div>
                         <div class="garage">
                             <img src="../images/icons/garage.png" alt="" class="icon">
-                            <!-- <span>{{ hasGarage }}</span> -->
-                            <span>garage</span>
+                            <span>{{ hasGarage }}</span>
                         </div>                    
                     </div>
                 </div>
@@ -99,30 +99,35 @@
 </template>
 
 <script>
-
+import houses from "../json/houses.json"
+import { useRoute } from "vue-router"
 
 export default {
     name:'Details',
     data() {
-    return {
-        houseId: this.$route.params.houseId,
+        return {
+            house: houses
         }
-    },
-    created() {
-        console.log("Getting houses and current house")
-        this.$store.dispatch("getCurrentHouse", this.$route.params.houseId);
-        console.log(this.$store.state.currentHouse);
     },
     computed: {
         hasGarage: {
             get() {
                 // return yes or no based on hasGarage boolean info
-                if (this.$store.state.currentHouse.hasGarage) {
+                if (this.house.garage) {
                     return "Yes"
                 } else {
                     return "No"
                 }
             }
+        }
+    },
+    methods: {
+        getCurrent() {
+            const route = useRoute
+
+
+
+            console.log(route.params)
         }
     }
 }

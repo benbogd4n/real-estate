@@ -30,12 +30,12 @@ const router = createRouter ({
             component: New
         },
         {
-            path: '/delete',
+            path: '/delete/',
             name: 'Delete',
             component: Delete
         },
         {
-            path: '/details',
+            path: '/details/:id',
             name: 'Details',
             component: Details
         }

@@ -23,11 +23,6 @@ export default {
             this.showModal = !this.showModal
         }
     },
-    created() {
-        console.log("Getting houses")
-        this.$store.dispatch("getHouses",);
-        console.log(this.$store.state.houses);
-    }
 };
 
 </script>
