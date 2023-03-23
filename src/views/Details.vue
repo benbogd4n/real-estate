@@ -26,53 +26,46 @@
                 <img src="../images/icons/back.png" alt="Back button" class="icon" >
                 <p class="back-button">Back to overview</p>
             </router-link>
-            <button @click="getCurrent">Get house</button>
+            <button @click="getData">Get house</button>
             <div class="house-container">
                 <img :src="`/src/images/houses/${this.$store.state.currentHouse.image}`" alt="House image" class="house-img">
             </div>
             <div class="house-description">
                 <div class="listing">
                     <div class="street">
-                        <h2>Street</h2>
-                        <!-- <h2>{{this.$store.state.currentHouse.address.street}}</h2> -->
+                        <h2>{{this.$store.state.currentHouse.address.street}}</h2>
                     </div>
                     <div class="address">
                         <div class="zip">
                             <img src="../images/icons/location.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.address.zip}}</span> -->
-                            <span>zip</span>
+                            <span>{{this.$store.state.currentHouse.address.zip}}</span>
                         </div>
                         <div class="city">
-                            <!-- <span>{{this.$store.state.currentHouse.address.city}}</span> -->
+                            <span>{{this.$store.state.currentHouse.address.city}}</span>
                         </div>                        
                     </div>
                     <div class="basic-info">
                         <div class="price">
                             <img src="../images/icons/euro.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.price}}</span> -->
-                            <span>price</span>
+                            <span>{{this.$store.state.currentHouse.price}}</span>
                         </div>
                         <div class="size">
                             <img src="../images/icons/size.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.size}} m2</span> -->
-                            <span>size</span>
+                            <span>{{this.$store.state.currentHouse.size}} m2</span>
                         </div>
                         <div class="constructionYear">
                             <img src="../images/icons/build.png" alt="" class="icon">
-                            <!-- <span>Built in {{this.$store.state.currentHouse.yearBuilt}}</span> -->
-                            <span>year</span>
+                            <span>Built in {{this.$store.state.currentHouse.yearBuilt}}</span>
                         </div>
                     </div>
                     <div class="amenities">
                         <div class="bedrooms">
                             <img src="../images/icons/bed.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.bedroom}}</span> -->
-                            <span>bedroom</span>
+                            <span>{{this.$store.state.currentHouse.bedroom}}</span>
                         </div>
                         <div class="bathrooms">
                             <img src="../images/icons/bath.png" alt="" class="icon">
-                            <!-- <span>{{this.$store.state.currentHouse.bathroom}}</span> -->
-                            <span>bathroom</span>
+                            <span>{{this.$store.state.currentHouse.bathroom}}</span>
                         </div>
                         <div class="garage">
                             <img src="../images/icons/garage.png" alt="" class="icon">
@@ -90,8 +83,7 @@
                 <!-- / edit and delete buttons -->
             </div>
             <div class="description">
-                <!-- <p>{{this.$store.state.currentHouse.description}}</p> -->
-                <p>description description description description description description description </p>
+                <p>{{this.$store.state.currentHouse.description}}</p>
             </div>
             <!-- / house description -->
         </div>
@@ -99,21 +91,18 @@
 </template>
 
 <script>
-import houses from "../json/houses.json"
-import { useRoute } from "vue-router"
-
 export default {
     name:'Details',
     data() {
         return {
-            house: houses
+            houses: this.$store.state.houses
         }
     },
     computed: {
         hasGarage: {
             get() {
                 // return yes or no based on hasGarage boolean info
-                if (this.house.garage) {
+                if (this.$store.state.currentHouse.garage) {
                     return "Yes"
                 } else {
                     return "No"
@@ -122,13 +111,14 @@ export default {
         }
     },
     methods: {
-        getCurrent() {
-            const route = useRoute
-
-
-
-            console.log(route.params)
+        getData() {
+            console.log(houses)
         }
+    },
+    created() {
+        console.log("Getting houses and current house")
+        this.$store.dispatch("getCurrentHouse", this.$route.params.houseId);
+        console.log(this.$store.state.currentHouse);
     }
 }
 </script>

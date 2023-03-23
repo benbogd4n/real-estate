@@ -35,7 +35,7 @@ const router = createRouter ({
             component: Delete
         },
         {
-            path: '/details/:id',
+            path: '/details?id=:houseId',
             name: 'Details',
             component: Details
         }

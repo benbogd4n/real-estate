@@ -11,7 +11,7 @@
     </div> -->
     <div class="results" v-for="house in houses" :key="house.id">
         <!-- <RouterLink to="/details" class="result" v-for="listing in filteredListings" :key="listing.id"> -->
-        <router-link :to="`/details/${house.id}`" class="result">
+        <router-link :to="{ name: 'Details', params: {houseId: house.id}}" @click="getCurrentHouse" class="result">
             <div class="house-container">
                 <img :src="`/src/images/houses/${house.image}`" alt="House image" class="house-img">
             </div>
