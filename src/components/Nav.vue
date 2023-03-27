@@ -1,16 +1,24 @@
 <template>
   <div class="nav">
-    <RouterLink to="/"><img src="../images/logo.png" alt="HRE logo" class="HRE-logo"></RouterLink>
-    <div class="nav-links">
-        <RouterLink to="/" active-class="active" class="houses">Houses</RouterLink>
-        <RouterLink to="/about" active-class="active" class="about">About</RouterLink>
-    </div>
+    <router-link to="/"><img src="../images/logo.png" alt="HRE logo" class="HRE-logo"></router-link>
+    <ul class="nav-links">
+      <li>
+        <router-link to="/" active-class="active" class="houses">Houses</router-link>
+      </li>
+      <li>
+        <router-link to="/about" active-class="active" class="about">About</router-link>
+      </li>
+      <li>
+        <!-- <img src="../images/logo.png" alt=""> -->
+        <router-link to="/profile" active-class="active" class="profile">Profile</router-link>
+      </li>
+    </ul>
   </div>
   <!-- / desktop nav -->
   <div class="mobile-nav">
     <div class="nav-links">
-        <RouterLink to="/" active-class="active" class="h-nav-button"><img src="../images/icons/home.png" alt="Home page" class="h-nav-button"></RouterLink>
-        <RouterLink to="/about" active-class="active" class="i-nav-button"><img src="../images/icons/info.png" alt="About page" class="i-nav-button"></RouterLink>
+        <router-link to="/" active-class="active" class="h-nav-button"><img src="../images/icons/home.png" alt="Home page" class="h-nav-button"></router-link>
+        <router-link to="/about" active-class="active" class="i-nav-button"><img src="../images/icons/info.png" alt="About page" class="i-nav-button"></router-link>
     </div>
   </div>
   <!-- / mobile nav -->
@@ -51,7 +59,11 @@ export default {
     font-weight: $regular;
     font-size: $large;
     color: $tertiary-dark;
-  }
+}
+
+li:last-child {
+  margin-left: 40rem;
+}
 
 .HRE-logo {
   max-width: 7rem;

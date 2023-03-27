@@ -20,13 +20,12 @@
             </div>
         </div>
         <!-- / mobile nav -->
-
-        <div class="details-main">
-            <router-link to="/">
+        <div class="details-container">
+            <div class="details-main">
+            <router-link to="/" class="back">
                 <img src="../images/icons/back.png" alt="Back button" class="icon" >
                 <p class="back-button">Back to overview</p>
             </router-link>
-            <button @click="getData">Get house</button>
             <div class="house-container">
                 <img :src="`/src/images/houses/${this.$store.state.currentHouse.image}`" alt="House image" class="house-img">
             </div>
@@ -34,15 +33,12 @@
                 <div class="listing">
                     <div class="street">
                         <h2>{{this.$store.state.currentHouse.address.street}}</h2>
+                        <h2>{{this.$store.state.currentHouse.address.number}}</h2>
                     </div>
                     <div class="address">
-                        <div class="zip">
                             <img src="../images/icons/location.png" alt="" class="icon">
                             <span>{{this.$store.state.currentHouse.address.zip}}</span>
-                        </div>
-                        <div class="city">
                             <span>{{this.$store.state.currentHouse.address.city}}</span>
-                        </div>                        
                     </div>
                     <div class="basic-info">
                         <div class="price">
@@ -86,6 +82,53 @@
                 <p>{{this.$store.state.currentHouse.description}}</p>
             </div>
             <!-- / house description -->
+            </div>
+
+            <div class="recommended-main">*
+                <div class="house-description">
+                    <div class="results" v-for="house in houses" :key="house.id">
+                        <router-link :to="{ name: 'Details', params: {houseId: house.id}}" @click="getCurrentHouse" class="result">
+                            <div class="house-container">
+                                <img :src="`/src/images/houses/${house.image}`" alt="House image" class="house-img">
+                            </div>
+                            <div class="listing">
+                                <div class="street">
+                                    <h2>{{house.address.street}}</h2>
+                                    <h2>{{house.address.number}}</h2>
+                                </div>
+                                <div class="price">
+                                    <span>€ {{house.price}}</span>
+                                </div>
+                                <div class="address">
+                                    <div class="postcode">
+                                        <span>{{house.address.zip}}</span>
+                                    </div>
+                                    <div class="city">
+                                        <span>{{house.address.city}}</span>
+                                    </div>
+                                </div>
+                                <div class="amenities">
+                                    <div class="amenity">
+                                        <img src="../images/icons/bed.png" alt="Bedroom icon" class="icon">
+                                        <span>{{house.bedroom}}</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <img src="../images/icons/bath.png" alt="Bathroom icon" class="icon">
+                                        <span>{{house.bathroom}}</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <img src="../images/icons/size.png" alt="Area icon" class="icon">
+                                        <span>{{house.size}} m2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edit-icons">
+                                <button class="favourite"><img src="../images/icons/heart.png" alt="" class="icon"></button>
+                            </div>
+                        </router-link>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -151,6 +194,20 @@ p {
     text-align: justify;
 }
 
+.street {
+    display: flex;
+}
+
+.back {
+    padding: 0;
+    width: 14rem;
+}
+
+.details-container {
+    display: flex;
+    gap: 12rem
+}
+
 .details {
     margin: 0;
     padding: 7rem 17rem 0 17rem;
@@ -158,6 +215,12 @@ p {
 
 .details-main {
     width: 33.5rem;
+    padding-bottom: 2rem;
+    background-color: $background-light;
+}
+
+.recommended-main {
+    width: 25rem;
     padding-bottom: 2rem;
     background-color: $background-light;
 }
@@ -173,9 +236,23 @@ p {
     width: 33.5rem;
 }
 
+.house-container-rec {
+    margin: 0;
+    padding: 0;
+    height: 15rem;
+    width: 25rem;
+}
+
 .house-img {
     height: 22rem;
     width: 100%;
+}
+
+.house-img-rec {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .house-description {
@@ -199,6 +276,8 @@ p {
 
 .address {
     display: flex;
+    align-items: center;
+    padding-left: 1rem;
 }
 
 .basic-info {

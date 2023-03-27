@@ -18,6 +18,7 @@
             <div class="listing">
                 <div class="street">
                     <h2>{{house.address.street}}</h2>
+                    <h2>{{house.address.number}}</h2>
                 </div>
                 <div class="price">
                     <span>€ {{house.price}}</span>
@@ -46,6 +47,7 @@
                 </div>
             </div>
             <div class="edit-icons">
+                <button class="favourite"><img src="../images/icons/heart.png" alt="" class="icon"></button>
                 <!-- <RouterLink :to="{ name: 'Edit', params: {houseId: listing.id}}" ><button class="edit"><img src="./Frontend_Internship_Test_Slices/ic_edit@3x.png" alt="Edit icon" class="icon"></button></RouterLink> -->
                 <RouterLink to="/edit"><button class="edit"><img src="../images/icons/edit.png" alt="Edit icon" class="icon"></button></RouterLink>
                 <!-- <RouterLink :to="{ name: 'Delete', params: {houseId: listing.id}}" ><button class="delete" @click="toggleModal"><img src="./Frontend_Internship_Test_Slices/ic_delete@3x.png" alt="Delete icon" class="icon"></button></RouterLink> -->
@@ -124,6 +126,11 @@ h2 {
     width: 30rem;
 }
 
+.street {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .price {
     color: $text-primary;
 }
@@ -136,10 +143,11 @@ h2 {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     margin: 1.5rem 0;
     cursor: pointer;
+    transition: box-shadow 0.5s;
 }
 
 .result:hover {
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .house-container {
@@ -182,7 +190,7 @@ h2 {
     padding-right: 1.5rem;
 }
 
-.edit, .delete {
+.favourite, .edit, .delete {
     background-color: $background-light;
     padding: 0.5rem;
 }

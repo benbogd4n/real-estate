@@ -244,6 +244,10 @@ a {
   font-size: 18px;
 }
 
+li {
+  list-style: none;
+}
+
 button {
   cursor: pointer;
   color: #fff;

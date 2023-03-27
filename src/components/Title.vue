@@ -39,6 +39,7 @@ export default {
     background-color: $element-primary;
     border-radius: 8px;
     padding: 0 1rem;
+    transition: box-shadow 0.5s;
 }
 
 .create:hover {

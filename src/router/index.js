@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Overview from '../views/Overview.vue'
 import About from '../views/About.vue'
+import Profile from '../views/Profile.vue'
 import Edit from '../views/Edit-view.vue'
 import New from '../views/New.vue'
 import Delete from '../views/Delete.vue'
@@ -18,6 +19,11 @@ const router = createRouter ({
             path: '/about',
             name: 'About',
             component: About
+        },
+        {
+            path: '/profile',
+            name: 'Profile',
+            component: Profile
         },
         {
             path: '/edit',
